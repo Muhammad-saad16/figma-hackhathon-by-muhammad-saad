@@ -1,19 +1,55 @@
 'use client'
 
 import React from "react";
-import Image from "next/image";
+import car from "../../../Public/car.png";
+import car5 from "../../../Public/Car5.png";
+import car6 from "../../../Public/Car6.png";
+import car7 from "../../../Public/Car7.png";
+const RentalSection = ({ title, icon }: { title: string; icon: string }) => {
+  return (
+    <div className="p-4 w-full lg:w-[600px] bg-white h-auto lg:h-40 rounded-xl">
+      <div className="flex items-center">
+        <img src={icon} alt={title} width={20} height={20} className="w-5" />
+        <h2 className="ml-3 text-lg font-bold">{title}</h2>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+        <div>
+          <label htmlFor="location" className="block font-semibold">Locations</label>
+          <select id="location" className="block w-full mt-1 border rounded px-2 py-1">
+            <option>Select your city</option>
+            <option>Karachi</option>
+            <option>Lahore</option>
+            <option>Islamabad</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor="date" className="block font-semibold">Date</label>
+          <select id="date" className="block w-full mt-1 border rounded px-2 py-1">
+            <option>Select Date</option>
+            <option>17-07-2023</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor="time" className="block font-semibold">Time</label>
+          <select id="time" className="block w-full mt-1 border rounded px-2 py-1">
+            <option>Select Time</option>
+            <option>12:00</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-interface SelectFieldProps {
-  label: string;
-  options: string[];
-}
-
-interface RentalSectionProps {
-  title: string;
-  icon: string;
-}
-
-interface CarData {
+const CarCard = ({ 
+  name,
+  type,
+  image,
+  fuel,
+  transmission,
+  capacity,
+  price,
+}: { 
   name: string;
   type: string;
   image: string;
@@ -21,45 +57,7 @@ interface CarData {
   transmission: string;
   capacity: string;
   price: number;
-}
-
-const SelectField: React.FC<SelectFieldProps> = ({ label, options }) => {
-  return (
-    <div>
-      <label htmlFor={label.toLowerCase()} className="block font-semibold">
-        {label}
-      </label>
-      <select 
-        id={label.toLowerCase()} 
-        className="block w-full mt-1 border rounded px-2 py-1"
-      >
-        {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
-};
-
-const RentalSection: React.FC<RentalSectionProps> = ({ title, icon }) => {
-  return (
-    <div className="p-4 w-full lg:w-[600px] bg-white h-auto lg:h-40 rounded-xl">
-      <div className="flex items-center">
-        <img src={icon} alt={title} className="w-5" />
-        <h2 className="ml-3 text-lg font-bold">{title}</h2>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-        <SelectField label="Locations" options={["Select your city", "Karachi", "Lahore", "Islamabad"]} />
-        <SelectField label="Date" options={["Select Date", "17-07-2023"]} />
-        <SelectField label="Time" options={["Select Time", "12:00"]} />
-      </div>
-    </div>
-  );
-};
-
-const CarCard: React.FC<CarData> = ({ name, type, image, fuel, transmission, capacity, price }) => {
+}) => {
   return (
     <div className="shadow-md overflow-hidden rounded-lg cursor-pointer hover:-translate-y-2 transition-all relative h-96">
       <div className="text-[#ED3F3F] w-11 h-10 flex items-center justify-center cursor-pointer absolute top-3 right-3">
@@ -83,7 +81,7 @@ const CarCard: React.FC<CarData> = ({ name, type, image, fuel, transmission, cap
       </div>
 
       <div className="w-5/6 h-[250px] p-2 overflow-hidden mx-auto">
-        <Image
+        <img
           src={image}
           alt={name}
           width={190}
@@ -128,45 +126,6 @@ const CarCard: React.FC<CarData> = ({ name, type, image, fuel, transmission, cap
 };
 
 export default function Hero() {
-  const carData: CarData[] = [
-    {
-      name: "Koenigsegg",
-      type: "Sport",
-      image: "/car.png",
-      fuel: "90L",
-      transmission: "Manual",
-      capacity: "2 People",
-      price: 99.00
-    },
-    {
-      name: "Nissan GT-R",
-      type: "Sport",
-      image: "/car3.png",
-      fuel: "80L",
-      transmission: "Manual",
-      capacity: "2 People",
-      price: 80.00
-    },
-    {
-      name: "Rolls-Royce",
-      type: "Sedan",
-      image: "/car4.png",
-      fuel: "70L",
-      transmission: "Manual",
-      capacity: "4 People",
-      price: 96.00
-    },
-    {
-      name: "Nissan GT-R",
-      type: "Sport",
-      image: "/car5.png",
-      fuel: "80L",
-      transmission: "Manual",
-      capacity: "2 People",
-      price: 80.00
-    }
-  ];
-
   return (
     <div className="font-[sans-serif] py-4 mx-auto lg:max-w-7xl sm:max-w-full mt-10">
       {/* Pick-Up and Drop-Off Section */}
@@ -176,7 +135,7 @@ export default function Hero() {
           
           {/* Switch Icon */}
           <div className="flex justify-center lg:block">
-            <img src="/Switch.png" alt="Switch Icon" className="w-16 h-16 lg:w-25 lg:h-20" />
+            <img src="/Switch.png" alt="Switch Icon" width={64} height={64} className="w-16 h-16 lg:w-25 lg:h-20" />
           </div>
           
           <RentalSection title="Drop - Off" icon="/mark1.png" />
@@ -195,9 +154,43 @@ export default function Hero() {
 
       {/* Car Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {carData.map((car, index) => (
-          <CarCard key={index} {...car} />
-        ))}
+        <CarCard
+          name="Koenigsegg"
+          type="Sport"
+          
+          image={car}
+          fuel="90L"
+          transmission="Manual"
+          capacity="2 People"
+          price={99.00}
+        />
+        <CarCard
+          name="Nissan GT-R"
+          type="Sport"
+          image={car3}
+          fuel="80L"
+          transmission="Manual"
+          capacity="2 People"
+          price={80.00}
+        />
+        <CarCard
+          name="Rolls-Royce"
+          type="Sedan"
+          image={car4}
+          fuel="70L"
+          transmission="Manual"
+          capacity="4 People"
+          price={96.00}
+        />
+        <CarCard
+          name="Nissan GT-R"
+          type="Sport"
+          image={car5}
+          fuel="80L"
+          transmission="Manual"
+          capacity="2 People"
+          price={80.00}
+        />
       </div>
     </div>
   );

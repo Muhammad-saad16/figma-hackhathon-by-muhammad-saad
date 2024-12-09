@@ -1,6 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import car4 from "../../../Public/car4.png";
+import car5 from "../../../Public/Car5.png";
+import car6 from "../../../Public/Car6.png";
+import car7 from "../../../Public/Car7.png";
+import car8 from "../../../Public/Car8.png";
+import car9 from "../../../Public/Car9.png";
+import car10 from "../../../Public/Car10.png";
+import car11 from "../../../Public/Car11.png";
 
 export default function Recomended() {
   return (
@@ -39,7 +47,7 @@ export default function Recomended() {
 
           <div className="w-5/6 h-[250px] p-2 overflow-hidden mx-auto aspect-w-16 aspect-h-8">
             <Image
-              src="/car4.png"
+              src={car4}
               alt="Product 1"
               className="h-full w-full object-contain"
               width={190}
@@ -190,7 +198,7 @@ export default function Recomended() {
 
           <div className="w-5/6 h-[250px] p-2 overflow-hidden mx-auto aspect-w-16 aspect-h-8">
             <Image
-              src="/car5.png"
+              src={car5}
               alt="Product 1"
               className="h-full w-full object-contain"
               width={190}
@@ -340,7 +348,7 @@ export default function Recomended() {
 
           <div className="w-5/6 h-[250px] p-2 overflow-hidden mx-auto aspect-w-16 aspect-h-8">
             <Image
-              src="/car6.png"
+              src={car6}
               alt="Product 1"
               className="h-full w-full object-contain"
               width={190}
@@ -488,7 +496,7 @@ export default function Recomended() {
 
           <div className="w-5/6 h-[250px] p-2 overflow-hidden mx-auto aspect-w-16 aspect-h-8">
             <Image
-              src="/car7.png"
+              src={car7}
               alt="Product 1"
               className="h-full w-full object-contain"
               width={190}
@@ -638,7 +646,7 @@ export default function Recomended() {
 
           <div className="w-5/6 h-[250px] p-2 overflow-hidden mx-auto aspect-w-16 aspect-h-8">
             <Image
-              src="/car8.png"
+              src={car8}
               alt="Product 1"
               className="h-full w-full object-contain"
               width={190}
@@ -788,7 +796,7 @@ export default function Recomended() {
 
           <div className="w-5/6 h-[250px] p-2 overflow-hidden mx-auto aspect-w-16 aspect-h-8">
             <Image
-              src="/car9.png"
+              src={car9}
               alt="Product 1"
               className="h-full w-full object-contain"
               width={190}
@@ -938,7 +946,7 @@ export default function Recomended() {
 
           <div className="w-5/6 h-[250px] p-2 overflow-hidden mx-auto aspect-w-16 aspect-h-8">
             <Image
-              src="/car10.png"
+              src={car10}
               alt="Product 1"
               className="h-full w-full object-contain"
               width={190}
@@ -1086,7 +1094,7 @@ export default function Recomended() {
 
           <div className="w-5/6 h-[250px] p-2 overflow-hidden mx-auto aspect-w-16 aspect-h-8">
             <Image
-              src="/car11.png"
+              src={car11}
               alt="Product 1"
               className="h-full w-full object-contain"
               width={190}
