@@ -2,6 +2,10 @@
 
 import Image from "next/image";
 import React from "react";
+import map from "../../../Public/Maps.png";
+import look from "../../../Public/Look.png";
+import top from "../../../Public/top.png";
+import recent from "../../../Public/recent.png";
 
 // Sidebar navigation item type
 type NavItem = {
@@ -66,7 +70,7 @@ export default function CarRentalDashboard() {
       <div className="w-[534px] h-[836px] bg-white m-3">
         <h2 className="text-[20px] m-4 text-[#1A202C]">Detail Rental</h2>
         <Image
-          src="/Maps.png"
+          src={map}
           alt="map"
           width={486}
           height={272}
@@ -75,7 +79,7 @@ export default function CarRentalDashboard() {
         <div className="flex items-center justify-between m-4">
           <div className="flex items-center">
             <Image
-              src="/Look.png"
+              src={look}
               alt="car"
               width={132}
               height={72}
@@ -98,13 +102,13 @@ export default function CarRentalDashboard() {
       {/* Right Panel */}
       <div className="w-[486px] h-[836px] bg-white m-3">
         <Image
-          src="/top.png"
+          src={top}
           alt="car"
           width={524}
           height={324}
         />
         <Image
-          src="/recent.png"
+          src={recent}
           alt="car"
           width={524}
           height={480}

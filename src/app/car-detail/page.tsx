@@ -326,7 +326,7 @@ export default function VehicleShowcase() {
                   onClick={() => setActiveImage(src)}
                   className="w-24 h-24 rounded-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
-                  <img
+                  <Image
                     src={src}
                     alt="Car view"
                     className="w-full h-full object-cover"

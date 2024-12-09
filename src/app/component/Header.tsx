@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+import profile from "../../../Public/profile-icon.png";
 
 export default function Header() {
   return (
@@ -123,8 +125,8 @@ export default function Header() {
 
             {/* Profile Icon */}
             <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-gray-300 cursor-pointer">
-              <img
-                src="/profile-icon.png"
+              <Image
+                src={profile}
                 alt="Profile"
                 className="w-full h-full object-cover"
               />

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import look from "../../../Public/Look.png";
 
 export default function VehicleReservationForm() {
   const [bookingData, setBookingData] = useState({
@@ -356,7 +357,7 @@ export default function VehicleReservationForm() {
     
             <div className="flex items-start space-x-4 mt-6">
               <Image
-                src="/Look.png"
+                src={look}
                 alt="Nissan GT-R"
                 width={100}
                 height={60}
