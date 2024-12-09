@@ -320,7 +320,7 @@ export default function VehicleShowcase() {
               />
             </div>
             <div className="flex gap-4">
-              {['/View.png', '/view1.png', '/View-2.png','/View-4.png'].map((src) => (
+              {['/view.png', '/View-1.png', '/View-2.png','/View-4.png'].map((src) => (
                 <button
                   key={src}
                   onClick={() => setActiveImage(src)}
